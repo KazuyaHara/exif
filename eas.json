@@ -1,0 +1,36 @@
+{
+  "cli": {
+    "version": ">= 0.47.0"
+  },
+  "build": {
+    "common": { "node": "16.14.0" },
+    "development": {
+      "extends": "common",
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": { "ENVIRONMENT": "development" }
+    },
+    "preview": {
+      "extends": "common",
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": { "ENVIRONMENT": "staging" },
+      "releaseChannel": "preview"
+    },
+    "production": {
+      "extends": "common",
+      "env": { "ENVIRONMENT": "production" },
+      "releaseChannel": "production"
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "releaseStatus": "draft",
+        "serviceAccountKeyPath": "./google-service-account-key.json",
+        "track": "production"
+      },
+      "ios": { "ascAppId": "1612652047" }
+    }
+  }
+}

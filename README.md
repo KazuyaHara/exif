@@ -1,3 +1,3 @@
-# exif
+# exifier
 
 an EXIF viewer.

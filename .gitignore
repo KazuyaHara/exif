@@ -12,3 +12,6 @@ web-build/
 
 # macOS
 .DS_Store
+
+# Google Service Account Key
+google-service-account-key.json

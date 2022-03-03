@@ -1,5 +1,5 @@
 {
-  "name": "exif",
+  "name": "exifier",
   "description": "an EXIF viewer",
   "version": "1.0.0",
   "commitlint": {
