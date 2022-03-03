@@ -12,7 +12,7 @@ jobs:
       - name: 🏗 Setup Node v16.14.0
         uses: actions/setup-node@v2
         with:
-          node-version: "v16.14.0"
+          node-version: 'v16.14.0'
 
       - name: 🏗 Setup Expo
         uses: expo/expo-github-action@7.0.2
@@ -24,10 +24,5 @@ jobs:
       - name: 📦 Install dependencies
         run: yarn install
 
-      - name: 🚀 Publish preview
-        run: expo publish --release-channel=pr-${{ github.event.number }}
-
-      - name: 💬 Comment in preview
-        uses: expo/expo-github-action/preview-comment@v7
-        with:
-          channel: pr-${{ github.event.number }}
+      - name: 🚀 Build preview app with EAS
+        run: eas build --profile preview --platform all --non-interactive --no-wait

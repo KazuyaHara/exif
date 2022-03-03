@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "exif",
-    "slug": "exif",
+    "name": "exifier",
+    "slug": "exifier",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,9 +15,11 @@
       "image": "./assets/splash.png"
     },
     "ios": {
+      "bundleIdentifier": "dev.kazuyahara.exifier",
       "supportsTablet": true
     },
     "android": {
+      "package": "dev.kazuyahara.exifier",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"

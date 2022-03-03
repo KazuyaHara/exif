@@ -1,5 +1,5 @@
 {
-  "name": "exif",
+  "name": "exifier",
   "description": "an EXIF viewer",
   "version": "1.0.0",
   "commitlint": {
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "expo": "~44.0.0",
+    "expo-dev-client": "~0.8.4",
     "expo-status-bar": "~1.2.0",
     "expo-updates": "~0.11.6",
     "react": "17.0.1",
@@ -46,10 +47,14 @@
   "private": true,
   "scripts": {
     "android": "expo start --android",
+    "build:all": "eas build --profile development --platform all",
+    "build:android": "eas build --profile development --platform android",
+    "build:ios": "eas build --profile development --platform ios",
     "commit": "npx cz",
     "eject": "expo eject",
     "ios": "expo start --ios",
-    "start": "expo start",
+    "start:dev": "ENVIRONMENT=development expo start",
+    "start:stg": "ENVIRONMENT=staging expo start",
     "web": "expo start --web"
   }
 }
