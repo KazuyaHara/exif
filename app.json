@@ -16,10 +16,12 @@
     },
     "ios": {
       "bundleIdentifier": "dev.kazuyahara.exifier",
+      "buildNumber": "1",
       "supportsTablet": true
     },
     "android": {
       "package": "dev.kazuyahara.exifier",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
