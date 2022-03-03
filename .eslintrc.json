@@ -9,7 +9,13 @@
   },
   "plugins": ["react", "react-native", "react-hooks", "@typescript-eslint"],
   "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      { "js": "never", "jsx": "never", "ts": "never", "tsx": "never" }
+    ],
     "react/jsx-filename-extension": ["error", { "extensions": [".ts", ".tsx"] }],
     "react/style-prop-object": ["error", { "allow": ["StatusBar"] }]
-  }
+  },
+  "settings": { "import/resolver": { "node": { "extensions": [".js", ".jsx", ".ts", ".tsx"] } } }
 }
