@@ -25,7 +25,7 @@ jobs:
         run: yarn install
 
       - name: 🚀 Publish preview
-        run: cd app && expo publish --release-channel=pr-${{ github.event.number }}
+        run: expo publish --release-channel=pr-${{ github.event.number }}
 
       - name: 💬 Comment in preview
         uses: expo/expo-github-action/preview-comment@v7
