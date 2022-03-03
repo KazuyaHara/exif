@@ -1,0 +1,42 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  submit:
+    name: Deploy to Apple and Google
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗 Checkout
+        uses: actions/checkout@v2
+
+      - name: 🏗 Setup Node v16.14.0
+        uses: actions/setup-node@v2
+        with:
+          node-version: 'v16.14.0'
+
+      - name: 🏗 Setup Expo
+        uses: expo/expo-github-action@7.0.2
+        with:
+          expo-version: 5.x
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: 📦 Install dependencies
+        run: yarn install
+
+      - name: 📝 Update versions
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: './app.json'
+        env:
+          expo.ios.buildNumber: '${{ github.run_number }}'
+          expo.android.versionCode: ${{ github.run_number }}
+
+      - name: 📝 Create Google service account key file
+        run: echo ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }} | base64 --decode > google-service-account-key.json
+
+      - name: 🚀 Deploy to Apple and Google via EAS Submit
+        run: eas build --profile production --platform all --non-interactive --auto-submit --no-wait
