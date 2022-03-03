@@ -47,10 +47,14 @@
   "private": true,
   "scripts": {
     "android": "expo start --android",
+    "build:all": "eas build --profile development --platform all",
+    "build:android": "eas build --profile development --platform android",
+    "build:ios": "eas build --profile development --platform ios",
     "commit": "npx cz",
     "eject": "expo eject",
     "ios": "expo start --ios",
-    "start": "expo start",
+    "start:dev": "ENVIRONMENT=development expo start",
+    "start:stg": "ENVIRONMENT=staging expo start",
     "web": "expo start --web"
   }
 }
