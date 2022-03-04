@@ -15,6 +15,10 @@
       { "js": "never", "jsx": "never", "ts": "never", "tsx": "never" }
     ],
     "react/jsx-filename-extension": ["error", { "extensions": [".ts", ".tsx"] }],
+    "react/require-default-props": [
+      "error",
+      { "forbidDefaultForRequired": false, "ignoreFunctionalComponents": true }
+    ],
     "react/style-prop-object": ["error", { "allow": ["StatusBar"] }]
   },
   "settings": { "import/resolver": { "node": { "extensions": [".js", ".jsx", ".ts", ".tsx"] } } }

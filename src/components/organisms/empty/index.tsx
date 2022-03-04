@@ -9,7 +9,7 @@ import i18n from '../../../i18n';
 export default function EmptyState() {
   return (
     <View alignItems="center" bg="white" flex={1} justifyContent="center">
-      <AspectRatioRespectImage source={Logo} />
+      <AspectRatioRespectImage alt="EXIF" source={Logo} />
       <Text mt={4}>{i18n.t('emptyState')}</Text>
     </View>
   );
